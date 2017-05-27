@@ -24,13 +24,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# model
+gem 'enum_help'
+
 # auth
 gem 'devise'
 
 # view
-gem "slim-rails"
-gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem "font-awesome-rails"
+gem 'sass-rails'
+gem "slim-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
