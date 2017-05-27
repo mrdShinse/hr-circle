@@ -8,6 +8,18 @@ html
     = javascript_include_tag 'application' 
 
   body
+    header
+      nav.navbar.navbar-default
+        div.container-fluid
+          /div.navbar-header
+          ul.nav.navbar-nav
+            li
+              = link_to 'dashboard', dashboard_path
+          ul.nav.navbar-nav
+            li
+              = link_to 'job_offer', job_offer
+          p.navbar-text
+            = current_person.name
     p.notice
       = notice
     p.alert
