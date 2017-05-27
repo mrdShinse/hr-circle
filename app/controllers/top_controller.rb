@@ -1,4 +1,4 @@
-class TopController < ApplicationController
+class TopController < NoAuthController
   def index
   end
 end
