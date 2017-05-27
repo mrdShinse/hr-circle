@@ -27,5 +27,16 @@ module HrCircle
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators do |g|
+      g.template_engine   :slim
+      g.stylesheet_engine :scss
+      g.javascript_engine :js
+      g.test_framework    :rspec,
+                           fixture: false,
+                           view_specs: false,
+                           routing_specs: false,
+                           helper_specs: false,
+                           integration_tool: false
+    end
   end
 end
