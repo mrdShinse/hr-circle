@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title HrCircle
+    = csrf_meta_tags 
+
+    = stylesheet_link_tag    'application', media: 'all' 
+    = javascript_include_tag 'application' 
+
+  body
+    header
+      nav.navbar.navbar-default
+        div.container-fluid
+          /div.navbar-header
+          ul.nav.navbar-nav
+            li
+              = link_to 'dashboard', dashboard_path
+          ul.nav.navbar-nav
+            li
+              = link_to 'job_offer', job_offers_path
+          p.navbar-text
+            = current_person.name
+    p.notice
+      = notice
+    p.alert
+      = alert
+    = yield 
