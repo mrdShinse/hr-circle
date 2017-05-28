@@ -1,0 +1,15 @@
+.container.content-main
+
+  .panel.panel-default
+    .panel-header
+      h4 Organization Info.
+    .panel-body
+      table.table.table-rspnsv.table-hover
+        thead
+          tr
+            th[width="150px"] name
+
+        tbody
+          tr
+            td[aria-label="status"]  = @organization.name
+        => link_to fa_icon('edit', text: 'edit'), edit_admin_organization_path(@organization), class: 'btn btn-sm btn-default'

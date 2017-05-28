@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   resources :job_offers do
   end
+
+  namespace :admin do
+    resource  :organization, :only => [:show, :edit, :update]
+  end
 end
