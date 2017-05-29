@@ -38,5 +38,9 @@ module HrCircle
                            helper_specs: false,
                            integration_tool: false
     end
+
+    # Devide locale file by type.
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
   end
 end
