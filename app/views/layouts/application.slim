@@ -19,7 +19,7 @@ html
             li
               = link_to 'job_offer', job_offers_path
           p.navbar-text
-            = current_person.name
+            = current_person ? current_person.name : ''
     p.notice
       = notice
     p.alert

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resource  :organization, :only => [:show, :edit, :update]
+    resources :users
   end
 end
