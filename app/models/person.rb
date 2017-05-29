@@ -3,4 +3,9 @@ class Person < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+ enum role: {
+   normal: 0,
+   admin:  1
+ }
+
 end

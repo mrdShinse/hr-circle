@@ -18,6 +18,13 @@ html
           ul.nav.navbar-nav
             li
               = link_to 'job_offer', job_offers_path
+          - if current_person ? current_person.admin? : false
+            ul.nav.navbar-nav
+              li
+                = link_to 'organization', admin_organization_path
+            ul.nav.navbar-nav
+              li
+                = link_to 'user', admin_users_path
           p.navbar-text
             = current_person ? current_person.name : ''
     p.notice
