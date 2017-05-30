@@ -7,10 +7,14 @@
       table.table.table-rspnsv.table-hover
         thead
           tr
-            th[width="80px"] status
-            th title
-            th[width="180px"] content
-            th[width="150px"] circle
+            th[width="80px"] 
+              = t('activerecord.attributes.job_offer.status')
+            th
+              = t('activerecord.attributes.job_offer.title')
+            th[width="180px"] 
+              = t('activerecord.attributes.job_offer.content')
+            th[width="150px"] 
+              = t('activerecord.attributes.job_offer.circle_id')
 
         tbody
           - @job_offers.each do |offer|

@@ -1,0 +1,6 @@
+ja:
+  views:
+    layouts:
+      application:
+        navigation:
+          dashboard: 'ダッシュボード'

@@ -6,7 +6,8 @@
       table.table.table-rspnsv.table-hover
         thead
           tr
-            th[width="150px"] name
+            th[width="150px"]
+              = t('activerecord.attributes.user.name')
 
         tbody
           - @users.each do |user|
