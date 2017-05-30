@@ -1,0 +1,9 @@
+ja:
+  views:
+    layouts:
+      application:
+        navigation:
+          dashboard: Dashboard
+          job_offer: Job Offer
+          organization: Company
+          user: User
