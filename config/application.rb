@@ -42,5 +42,6 @@ module HrCircle
     # Devide locale file by type.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
+    config.autoload_paths << Rails.root.join('app', 'decorators', '**', '*.rb').to_s
   end
 end

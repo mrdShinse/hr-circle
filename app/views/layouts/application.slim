@@ -26,7 +26,7 @@ html
               li
                 = link_to t('navigation.user'), admin_users_path
           p.navbar-text
-            = current_person ? current_person.name : ''
+            = current_person ? 'Login as ' + current_person.name : ''
     p.notice
       = notice
     p.alert

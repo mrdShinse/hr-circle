@@ -32,6 +32,7 @@ gem 'devise'
 
 # view
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'active_decorator'
 gem "font-awesome-rails"
 gem 'sass-rails'
 gem "slim-rails"
