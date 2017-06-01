@@ -25,6 +25,9 @@ html
             ul.nav.navbar-nav
               li
                 = link_to t('navigation.user'), admin_users_path
+            ul.nav.navbar-nav
+              li
+                = link_to t('navigation.circle'), admin_circles_path
           p.navbar-text
             = current_person ? 'Login as ' + current_person.name : ''
     p.notice

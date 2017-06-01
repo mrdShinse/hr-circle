@@ -1,0 +1,19 @@
+.container.content-main
+
+  .panel.panel-default
+    .panel-header
+      = link_to 'new', new_admin_circle_path, class: "btn btn-primary"
+    .panel-body
+      table.table.table-rspnsv.table-hover
+        thead
+          tr
+            th[width="150px"]
+              = t('activerecord.attributes.circle.name')
+
+        tbody
+          - @circles.each do |circle|
+            tr
+              td[aria-label="name"]  = circle.name
+              td
+                => link_to fa_icon('edit', text: 'edit'), edit_admin_circle_path(circle), class: 'btn btn-sm btn-default'
+                = link_to fa_icon('trash', text: 'destroy'), admin_circle_path(circle), class: 'btn btn-sm btn-default', data: { confirm: 'are you sure?' }, method: :delete
