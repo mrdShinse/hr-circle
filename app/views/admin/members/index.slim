@@ -1,0 +1,15 @@
+.container.content-main
+
+  .panel.panel-default
+    .panel-header
+    .panel-body
+      table.table.table-rspnsv.table-hover
+        thead
+          tr
+            th[width="150px"]
+              = t('activerecord.attributes.person.name')
+
+        tbody
+          - @members.each do |member|
+            tr
+              td[aria-label="name"]  = member.name
