@@ -26,6 +26,8 @@ class Admin::CirclesController < ApplicationController
   end
 
   def update
+    @circle.people.push(Person.where(id: circle_params[:person_ids])) if circle_params[:person_ids]
+    @circle.save!
     if @circle.update(circle_params)
       redirect_to admin_circles_path, flash: { success: 'success' }
     else
@@ -43,13 +45,14 @@ class Admin::CirclesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_circle
-      @circle = Circle.find_by!(id: params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def circle_params
-      params.require(:circle).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_circle
+    @circle = Circle.find_by!(id: params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def circle_params
+    params.require(:circle).permit(:name, :person_ids)
+  end
 end

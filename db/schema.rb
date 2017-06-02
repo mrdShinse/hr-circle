@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20170529142434) do
   end
 
   create_table "circles_people", id: false, force: :cascade do |t|
-    t.integer "circles_id"
+    t.integer "circle_id"
     t.integer "person_id"
-    t.index ["circles_id", "person_id"], name: "index_circles_people_on_circles_id_and_person_id"
+    t.index ["circle_id", "person_id"], name: "index_circles_people_on_circle_id_and_person_id"
   end
 
   create_table "job_offers", force: :cascade do |t|

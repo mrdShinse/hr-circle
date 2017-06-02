@@ -3,7 +3,7 @@ class Admin::MembersController < ApplicationController
   before_action :set_circle
 
   def index
-    @members = Person.all
+    @organization = Organization.find(1)
   end
 
   private
