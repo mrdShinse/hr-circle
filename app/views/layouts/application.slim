@@ -15,13 +15,13 @@ html
           ul.nav.navbar-nav
             li
               = link_to t('navigation.dashboard'), dashboard_path
-          ul.nav.navbar-nav
-            li
-              = link_to t('navigation.job_offer'), job_offers_path
           - if current_person ? current_person.admin? : false
             ul.nav.navbar-nav
               li
                 = link_to t('navigation.organization'), admin_organization_path
+            ul.nav.navbar-nav
+              li
+                = link_to t('navigation.job_offer'), admin_job_offers_path
             ul.nav.navbar-nav
               li
                 = link_to t('navigation.user'), admin_users_path

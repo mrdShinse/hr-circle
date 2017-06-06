@@ -1,4 +1,4 @@
-= form_for @job_offer, html: { class: 'form-horizontal' } do |f|
+= form_for [:admin, @job_offer], html: { class: 'form-horizontal' } do |f|
   - if @job_offer.errors.any?
     .panel-body
       .alert.alert-danger
@@ -28,4 +28,4 @@
             = state[0]
   .panel-footer.text-center
       => f.submit "save", class: 'btn btn-primary'
-      = link_to "back", job_offers_path, class: 'btn btn-default'
+      = link_to "back", admin_job_offers_path, class: 'btn btn-default'

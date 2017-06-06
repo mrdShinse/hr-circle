@@ -1,4 +1,4 @@
-class JobOffersController < ApplicationController
+class Admin::JobOffersController < ApplicationController
 
   before_action :set_job_offer, only: [:edit, :update, :destroy]
 
@@ -20,7 +20,7 @@ class JobOffersController < ApplicationController
     @job_offer = JobOffer.new(job_offer_params)
 
     if @job_offer.save
-      redirect_to job_offers_path, flash: { success: 'success' }
+      redirect_to admin_job_offers_path, flash: { success: 'success' }
     else
       flash[:error] = 'error'
       render :new
@@ -29,7 +29,7 @@ class JobOffersController < ApplicationController
 
   def update
     if @job_offer.update(job_offer_params)
-      redirect_to job_offers_path, flash: { success: 'success' }
+      redirect_to admin_job_offers_path, flash: { success: 'success' }
     else
       flash[:error] = 'error'
       render :edit
@@ -38,9 +38,9 @@ class JobOffersController < ApplicationController
 
   def destroy
     if @job_offer.destroy
-      redirect_back fallback_location: job_offers_url, flash: { success: 'success' }
+      redirect_back fallback_location: admin_job_offers_url, flash: { success: 'success' }
     else
-      redirect_back fallback_location: job_offers_url, flash: { success: 'error' }
+      redirect_back fallback_location: admin_job_offers_url, flash: { success: 'error' }
     end
   end
 
