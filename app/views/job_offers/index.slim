@@ -1,0 +1,17 @@
+.container.content-main
+
+  .panel.panel-default
+    .panel-body
+      table.table.table-rspnsv.table-hover
+        thead
+          tr
+            th
+              = t('activerecord.attributes.job_offer.title')
+            th[width="150px"] 
+              = t('activerecord.attributes.job_offer.circle_id')
+
+        tbody
+          - @job_offers.each do |offer|
+            tr
+              td[aria-label="title"]   = offer.title
+              td[aria-label="circle"]  = offer.circle_id

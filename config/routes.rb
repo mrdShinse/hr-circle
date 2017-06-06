@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'dashboard' => 'dashboard#index'
 
+  resources :job_offers
+
   namespace :admin do
     resource  :organization, only: %i[show edit update]
     resources :users
