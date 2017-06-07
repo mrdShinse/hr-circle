@@ -1,0 +1,11 @@
+.panel.panel-default
+  .panel-header
+    = offer.title
+    = offer.job_type_label
+    = offer.employment_type
+  .panel-body
+    .
+      = t('activerecord.attributes.job_offer.circle_id')
+      = offer.circle.name
+    .
+      = offer.content
