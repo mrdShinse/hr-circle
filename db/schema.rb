@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529142434) do
+ActiveRecord::Schema.define(version: 20170606130635) do
 
   create_table "circles", force: :cascade do |t|
     t.string "name", null: false
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20170529142434) do
   end
 
   create_table "circles_people", id: false, force: :cascade do |t|
-    t.integer "circles_id"
+    t.integer "circle_id"
     t.integer "person_id"
-    t.index ["circles_id", "person_id"], name: "index_circles_people_on_circles_id_and_person_id"
+    t.index ["circle_id", "person_id"], name: "index_circles_people_on_circle_id_and_person_id"
   end
 
   create_table "job_offers", force: :cascade do |t|
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20170529142434) do
     t.integer "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "published_at"
+    t.integer "employment_type", default: 0, null: false
+    t.integer "job_type", default: 0, null: false
   end
 
   create_table "organizations", force: :cascade do |t|
