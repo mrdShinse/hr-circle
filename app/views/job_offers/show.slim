@@ -1,0 +1,10 @@
+.container.content-main
+  .panel.panel-default
+    .panel-header
+      h4
+        = @job_offer.title
+      span
+        = @job_offer.job_type_label
+        = @job_offer.employment_type
+    .panel-body
+      = @job_offer.content
