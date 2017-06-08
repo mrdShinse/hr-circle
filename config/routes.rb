@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :people
   root 'top#index'
 
-  get 'dashboard' => 'dashboard#index'
 
   resources :job_offers
 
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get 'dashboard' => 'dashboard#index'
     resource  :organization, only: %i[show edit update]
     resources :users
     resources :job_offers
