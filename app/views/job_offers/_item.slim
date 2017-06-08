@@ -1,6 +1,6 @@
 .panel.panel-default
   .panel-header
-    = offer.title
+    = link_to offer.title, circle_job_offer_path(offer.circle_id, offer.id)
     = offer.job_type_label
     = offer.employment_type
   .panel-body
@@ -9,3 +9,4 @@
       = offer.circle.name
     .
       = offer.content
+    .

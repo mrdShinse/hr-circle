@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :job_offers
 
+  resources :circles do
+    resources :job_offers
+  end
+
   namespace :admin do
     resource  :organization, only: %i[show edit update]
     resources :users
