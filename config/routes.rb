@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :people
   root 'top#index'
 
-
   resources :job_offers
 
   resources :circles do
