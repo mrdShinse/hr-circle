@@ -43,6 +43,7 @@ namespace :dev do
             person.admin!
             circles[0].members.push
           end
+          person.organization = Organization.find(1) if index.odd?
           circles[0].members.push person if index % 3 == 1
           circles[1].members.push person if index % 3 == 2
 

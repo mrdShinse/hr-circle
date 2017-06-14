@@ -30,7 +30,7 @@
         - @organization.people.each do |person|
           .check-box
             label
-              = f.check_box :person_ids, { multiple: true, checked: person[:checked]}, person[:id]
+              = f.check_box :person_ids, { multiple: true, checked: @circle.members.include?(person)}, person[:id]
               = person.name
       .panel-footer.text-center
         = f.submit "save", class: 'btn btn-primary'

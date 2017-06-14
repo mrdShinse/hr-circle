@@ -26,9 +26,9 @@ class Admin::CirclesController < ApplicationController
   end
 
   def update
-    @circle.people.push(Person.where(id: params[:circle][:person_ids].uniq)) if params[:circle][:person_ids]
-    @circle.parent = Circle.find_by(name: params[:circle][:parent_name])     if params[:circle][:parent_name]
-    @circle.name   = params[:circle][:name]                                  if params[:circle][:name]
+    @circle.members = Person.where(id: params[:circle][:person_ids].uniq) if params[:circle][:person_ids]
+    @circle.parent  = Circle.find_by(name: params[:circle][:parent_name]) if params[:circle][:parent_name]
+    @circle.name    = params[:circle][:name]                              if params[:circle][:name]
     if @circle.save
       redirect_to admin_circles_path, flash: { success: 'success' }
     else

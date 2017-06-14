@@ -2,6 +2,7 @@
 
 class Person < ApplicationRecord # :nodoc:
   has_and_belongs_to_many :circles
+  belongs_to :organization, optional: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
