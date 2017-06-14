@@ -12,7 +12,5 @@
       .col-sm-10
         = f.text_field :name, class: 'form-control'
   .panel-footer.text-center
-    - unless @circle.id.nil?
-      => link_to "member", admin_circle_members_path(@circle.id), class: 'btn btn-default'
     => f.submit "save", class: 'btn btn-primary'
     = link_to "back", admin_circles_path, class: 'btn btn-default'

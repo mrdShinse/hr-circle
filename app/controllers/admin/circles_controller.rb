@@ -26,8 +26,7 @@ class Admin::CirclesController < ApplicationController
   end
 
   def update
-    @circle.people.push(Person.where(id: circle_params[:person_ids])) if circle_params[:person_ids]
-    @circle.save!
+    @circle.people.push(Person.where(id: params[:circle][:person_ids].uniq)) if params[:circle][:person_ids]
     if @circle.update(circle_params)
       redirect_to admin_circles_path, flash: { success: 'success' }
     else

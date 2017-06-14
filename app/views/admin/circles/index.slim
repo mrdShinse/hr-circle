@@ -6,14 +6,32 @@
     .panel-body
       table.table.table-rspnsv.table-hover
         thead
-          tr
-            th[width="150px"]
+          tr.row
+            th.col-sm-1
               = t('activerecord.attributes.circle.name')
+            th.col-sm-1
+              = t('activerecord.attributes.circle.parent')
+            th.col-sm-3
+              = t('activerecord.attributes.circle.children')
+            th.col-sm-4
+              = t('activerecord.attributes.circle.members')
+            th.col-sm-2
+              = ''
 
         tbody
           - @circles.each do |circle|
-            tr
-              td[aria-label="name"]  = circle.name
-              td
+            tr.row
+              td.col-sm-1[aria-label="name"]  = circle.name
+              td.col-sm-1[aria-label="name"]  = circle.parent_name
+              td.col-sm-3[aria-label="name"]
+                - circle.children.each do |child|
+                  = child.name
+                  br
+              td.col-sm-4[aria-label="name"]
+                .row
+                  - circle.members.each do |member|
+                    .col-sm-3 = member.name
+              td.col-sm-2
                 => link_to fa_icon('edit', text: 'edit'), edit_admin_circle_path(circle), class: 'btn btn-sm btn-default'
-                = link_to fa_icon('trash', text: 'destroy'), admin_circle_path(circle), class: 'btn btn-sm btn-default', data: { confirm: 'are you sure?' }, method: :delete
+                => link_to fa_icon('trash', text: 'destroy'), admin_circle_path(circle), class: 'btn btn-sm btn-default', data: { confirm: 'are you sure?' }, method: :delete
+                = link_to "member", admin_circle_members_path(circle.id), class: 'btn btn-sm btn-default'

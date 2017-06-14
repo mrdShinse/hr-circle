@@ -35,6 +35,7 @@ html
                 = link_to t('navigation.circle'), admin_circles_path
           p.navbar-text
             = current_person ? 'Login as ' + current_person.name : ''
+            = link_to 'logout', destroy_person_session_path, method: 'DELETE'
     p.notice
       = notice
     p.alert

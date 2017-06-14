@@ -11,7 +11,7 @@
               = t('activerecord.attributes.person.name')
 
         tbody
-          - @circle.people.each do |member|
+          - @circle.members.each do |member|
             tr
               td[aria-label="name"]  = member.name
 
