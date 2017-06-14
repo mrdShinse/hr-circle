@@ -27,7 +27,9 @@ class Admin::CirclesController < ApplicationController
 
   def update
     @circle.people.push(Person.where(id: params[:circle][:person_ids].uniq)) if params[:circle][:person_ids]
-    if @circle.update(circle_params)
+    @circle.parent = Circle.find_by(name: params[:circle][:parent_name])     if params[:circle][:parent_name]
+    @circle.name   = params[:circle][:name]                                  if params[:circle][:name]
+    if @circle.save
       redirect_to admin_circles_path, flash: { success: 'success' }
     else
       flash[:error] = 'error'
@@ -52,6 +54,10 @@ class Admin::CirclesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def circle_params
-    params.require(:circle).permit(:name, :person_ids)
+    params.require(:circle).permit(
+      :name,
+      :person_ids,
+      :parent_name
+    )
   end
 end
