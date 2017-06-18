@@ -31,6 +31,7 @@ gem 'enum_help'
 gem 'devise'
 
 # view
+gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'active_decorator'
 gem "font-awesome-rails"

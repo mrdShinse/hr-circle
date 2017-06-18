@@ -1,0 +1,18 @@
+.container.content-main
+
+  .panel.panel-default
+    .panel-body
+      table.table.table-rspnsv.table-hover
+        thead
+          tr
+            th
+              = t('activerecord.attributes.circle.name')
+            th
+              = ''
+
+        tbody
+          - @circles.each do |circle|
+            tr
+              td[aria-label="name"]  = circle.name
+              td
+                = link_to 'detail', circle_path(circle.id), class: 'btn btn-sm btn-primary'

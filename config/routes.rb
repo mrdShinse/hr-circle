@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get 'login' => ''
     get 'dashboard' => 'dashboard#index'
     resource  :organization, only: %i[show edit update]
     resources :users
