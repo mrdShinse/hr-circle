@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     get 'dashboard' => 'dashboard#index'
     resource  :organization, only: %i[show edit update]
     resources :users
+    resources :circles do
+      resources :members
+    end
     resources :job_offers
   end
 end
