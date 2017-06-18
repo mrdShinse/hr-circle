@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :job_offers
 
   resources :circles do
-    resources :job_offers
+    resources :job_offers do
+      resources :messages
+    end
   end
 
   namespace :admin do

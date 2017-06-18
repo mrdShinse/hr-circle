@@ -6,5 +6,9 @@
       span
         = @job_offer.job_type_label
         = @job_offer.employment_type
+        - if current_person
+          = link_to 'propose!', circle_job_offer_message_path(circle_id: @job_offer.circle_id,
+                                                            job_offer_id: @job_offer.id),
+                                                            class: 'btn btn-sm btn-info'
     .panel-body
       = @job_offer.content
