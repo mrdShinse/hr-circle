@@ -61,9 +61,10 @@ namespace :dev do
           offer = JobOffer.find_or_initialize_by(id: index)
           next unless offer.new_record?
 
+          circle_id = (index % Person.all.count) + 1
           offer.attributes = {
-            circle_id: (index % Person.all.count) + 1,
-            title:     "[circle##{offer.circle_id}]分散型SNSの開発担当者募集中！",
+            circle_id: circle_id,
+            title:     "[circle##{circle_id}]分散型SNSの開発担当者募集中！",
             content:   content,
             status:    index % JobOffer.statuses.size
           }
